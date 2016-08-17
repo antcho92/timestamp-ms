@@ -18,11 +18,23 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:timestamp', function(req, res) {
-  var time = moment(req.params.timestamp);
-  res.json({
-    'natural': time.format('MM DD, YYYY'),
-    'unix': time.format('X')
-  });
+  var time;
+  //need to find a way to validate and determine which type of date was input
+  if (time.isValid()) {
+    time = moment(req.params.timestamp, 'MMMM DD, YYYY');
+  }
+  if (time.isValid()) {
+    res.json({
+      'natural': time.format('MM DD, YYYY'),
+      'unix': time.format('X')
+    });
+  //returns the null response for invalid times
+  } else {
+    res.json({
+      'natural': null,
+      'unix': null
+    });
+  }
 });
 
 app.listen(port, function () {
