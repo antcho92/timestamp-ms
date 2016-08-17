@@ -1,6 +1,10 @@
 var express = require('express');
+var http = require('http');
+var moment = require('moment');
+var path = require('path');
 var app = express();
 
+//GET home page
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
