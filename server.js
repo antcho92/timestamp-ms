@@ -18,14 +18,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:timestamp', function(req, res) {
-  var time;
-  //need to find a way to validate and determine which type of date was input
-  if (time.isValid()) {
+  var time,
+      regex = /^\d{8,}$/;
+  //checks for a unix string passed
+  if (regex.test(req.params.timestamp)) {
+    time = moment(req.params.timestamp, 'X');
+    console.log("unix time: " + time);
+  } else {
     time = moment(req.params.timestamp, 'MMMM DD, YYYY');
+    console.log('natural time: ' + time);
   }
   if (time.isValid()) {
     res.json({
-      'natural': time.format('MM DD, YYYY'),
+      'natural': time.format('MMMM DD, YYYY'),
       'unix': time.format('X')
     });
   //returns the null response for invalid times
