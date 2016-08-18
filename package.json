@@ -1,14 +1,25 @@
 {
   "name": "timestamp",
   "version": "1.0.0",
-  "description": "timestamp microservice for fcc",
+  "description": "timestamp microservice for FCC",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Anthony Cho",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
-  }
+    "express": "^4.14.0",
+    "moment": "^2.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antcho92/timestamp-ms.git"
+  },
+  "author": "Anthony Cho <antcho92@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antcho92/timestamp-ms/issues"
+  },
+  "homepage": "https://github.com/antcho92/timestamp-ms#readme"
 }
