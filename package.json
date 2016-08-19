@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antcho92/timestamp-ms.git"
+    "url": "https://github.com/antcho92/timestamp-ms.git"
   },
   "author": "Anthony Cho <antcho92@gmail.com>",
   "license": "ISC",

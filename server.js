@@ -1,10 +1,9 @@
 var express = require('express');
-var http = require('http');
 var moment = require('moment');
 var path = require('path');
 var app = express();
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 //GET home page
 app.get('/', function (req, res) {
